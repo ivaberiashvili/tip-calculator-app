@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root {
+    --dark:#00474B;
+    --dark-dim:#0D686D;
+    --teal:#26C2AE;
+    --teal-light:#9FE8DF;
+    --grey:#5E7A7D;
+    --whiteish:#F3F9FA;
+}
+/* RESET */
+*{
+    box-sizing:border-box;
+    font-family: 'Space Mono', monospace;
+}
+button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+body{
+    background: #C5E4E7;   
+}
+main{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+    height:100vh;
+}
+/* TYPOGRAPHY */
+.x-small{
+    font-size:0.813rem;
+    line-height:1.203rem;
+}
+.small{
+    font-size:1rem;
+    line-height:1.481rem;
+}
+.medium {
+    font-size:1.5rem;
+    line-height:2.221rem;
+}
+
+.big{
+    font-size:2rem;
+    line-height:2.962rem;
+}
+
+.x-big{
+    font-size:3rem;
+    line-height:4.443rem;
+}
+
+
+/* CALCULATOR */
+.logo{
+    margin-top:3.125rem;
+    margin-bottom:2.5625rem;
+}
+.card{
+    background:white;
+    width: 375px;
+    height: 789px;
+    min-height: 789px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 2rem 1.5rem;
+    display:flex;
+    flex-direction:column;
+    box-shadow: 0px 32px 43px 0px #4FA6AF33;
+}
+.input-field{
+    /* background:wheat; */
+    width:327px;
+    height: 100%;
+    padding:0 0.5rem;
+}
+.output-field{
+    background: #00474B;
+    width:327px;
+    min-height: 257px;
+    border-radius:15px;
+}
+
+@media (min-width:992px){
+    main{
+        justify-content:center;
+    }
+    .logo{
+        margin-bottom:5.5rem;
+    }
+    .card{
+        width: 920px;
+        height: 481px;
+        min-height: 481px;
+        padding: 2rem;
+        border-radius: 25px;
+        flex-direction:row;
+        margin-bottom: 4.75rem;
+    }
+    .input-field{
+        width:100%;
+        height: 100%;
+        padding:0.813rem 3rem 0.813rem 1rem;
+    }
+    .output-field{
+        background: #00474B;
+        min-width:413px;
+        height:100%;
+        border-radius:15px;
+    }
+}
+/* INPUT FIELD */
+/* FORMS */
+
+/* CUSTOM SPIN BUTTONS */
+/* #tip-input {
+    position: relative; 
+    padding-right: 25px;
+}
+
+#tip-input::-webkit-inner-spin-button,
+#tip-input::-webkit-outer-spin-button {
+opacity: 1;
+}
+
+#tip-input::-webkit-outer-spin-button, 
+#tip-input::-webkit-inner-spin-button {
+-webkit-appearance: inner-spin-button !important;
+width: 25px;
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;   
+} */
+
+
+
+form {
+    display:flex;
+    flex-direction:column;
+    color:var(--grey);
+}
+form label {
+    margin-bottom:0.375rem;
+}
+#notice{
+    margin-bottom:0.375rem;
+    color:#E17052;
+    display:none;
+}
+.people-number div{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+input {
+    background-color:var(--whiteish);
+    color:var(--dark);
+    border: none;
+    height:3rem;
+    padding:0;
+    border-radius:0.313rem;
+    margin-bottom:2rem;
+    background-position:1.204rem 50%;
+    background-repeat:no-repeat;
+    padding-left:3rem;
+    cursor:pointer;
+    text-align:right;
+    padding-right:1.063rem;
+    caret-color: var(--teal);
+}
+
+::placeholder{
+    color:var(--grey);
+}
+
+/* remove number spin buttons from mozilla */
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
+/* from chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+
+#bill{
+    background-image: url(./images/icon-dollar.svg);
+    margin-bottom:2rem;  
+
+}
+
+#tip-input{
+    padding-left:unset;
+}
+
+#people{
+    background-image: url(./images/icon-person.svg);
+    margin-bottom:2rem;
+}
+
+
+/* INPUT FOCUS COLOR */
+input:focus {
+    outline: none !important;
+    border:2px solid var(--teal);
+    color:var(--dark);
+}
+
+input:focus::placeholder {
+    color: transparent;
+  }
+
+/* SELECT GRID*/
+.select-tip{
+    width:294.44px;
+}
+.select-tip p{
+    color:var(--grey);
+}
+.tip-grid{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    column-gap:1.035rem;
+    grid-template-rows: 3rem 3rem 3rem;
+    row-gap:1rem;
+    margin-top:1rem;
+    margin-bottom:2rem;
+}
+.tip-click {
+    background-color:var(--dark);
+    border-radius:0.313rem;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    color:white;
+}
+
+.tip-click:hover {
+    outline: none !important;
+    background-color:var(--teal-light);
+    color: var(--dark);
+}
+
+@media (min-width:992px){
+    .people-number input{
+        margin-bottom:0;
+    }
+    .select-tip{ 
+        width:351px;
+    }
+    .tip-grid{
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        column-gap:0.875rem;
+        grid-template-rows: 3rem 3rem;
+        row-gap:1rem;
+        margin:1rem 0 2.5rem 0;
+    }
+    #bill{
+        margin-bottom:2.5rem;
+    }
+    #people{
+        margin-bottom:2.5rem;
+    }
+}
+/* OUTPUT FIELD */
+.output-field{
+    padding:2.438rem 1.375rem 1.5rem 1.375rem;
+}
+.tip-amount, .total-amount{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    justify-content:space-between;
+}
+.tip-amount .small, .total-amount .small{
+    color:white;
+}
+.tip-amount .x-small, .total-amount .x-small{
+    color:var(--grey);
+}
+.tip-amount h1, .total-amount h1{
+   color:var(--teal);
+}
+.tip-amount{
+    margin-bottom:1.563rem;
+}
+.total-amount{
+    margin-bottom:1.563rem;
+}
+#reset{
+    position: relative;
+    background-color:var(--dark-dim);
+    border:none;
+    padding:0;
+    border-radius:0.313rem;
+    height:3rem;
+    width:100%;
+    font-size:1.25rem;
+    line-height:1.851rem;
+    color:var(--dark);
+
+}
+#reset:hover{
+    background-color : var(--teal-light);
+    transition: 0.1s;
+}
+
+@media (min-width:992px){
+    .output-field{
+        padding:2.5rem;
+    }
+    .tip-amount{
+        margin-bottom:3.313rem;
+    }
+    .total-amount{
+        margin-bottom:8.375rem;
+    }  
+}
+
+
