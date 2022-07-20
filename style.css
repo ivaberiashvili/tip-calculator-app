@@ -23,7 +23,7 @@ button{
 	outline: inherit;
 }
 body{
-    background: #C5E4E7;   
+    background: #C5E4E7;
 }
 main{
     display:flex;
@@ -36,6 +36,7 @@ main{
 .x-small{
     font-size:0.813rem;
     line-height:1.203rem;
+    color:#7F9D9F;
 }
 .small{
     font-size:1rem;
@@ -75,7 +76,6 @@ main{
     box-shadow: 0px 32px 43px 0px #4FA6AF33;
 }
 .input-field{
-    /* background:wheat; */
     width:327px;
     height: 100%;
     padding:0 0.5rem;
@@ -92,6 +92,7 @@ main{
         justify-content:center;
     }
     .logo{
+        margin-top:unset;
         margin-bottom:5.5rem;
     }
     .card{
@@ -115,32 +116,10 @@ main{
         border-radius:15px;
     }
 }
+
 /* INPUT FIELD */
+
 /* FORMS */
-
-/* CUSTOM SPIN BUTTONS */
-/* #tip-input {
-    position: relative; 
-    padding-right: 25px;
-}
-
-#tip-input::-webkit-inner-spin-button,
-#tip-input::-webkit-outer-spin-button {
-opacity: 1;
-}
-
-#tip-input::-webkit-outer-spin-button, 
-#tip-input::-webkit-inner-spin-button {
--webkit-appearance: inner-spin-button !important;
-width: 25px;
-position: absolute;
-top: 0;
-left: 0;
-height: 100%;   
-} */
-
-
-
 form {
     display:flex;
     flex-direction:column;
@@ -177,17 +156,13 @@ input {
     caret-color: var(--teal);
 }
 
-::placeholder{
-    color:var(--grey);
-}
-
 /* remove number spin buttons from mozilla */
 input[type=number] { 
     -moz-appearance: textfield;
     appearance: textfield;
     margin: 0; 
 }
-/* from chrome */
+/* remove number spin buttons from chrome */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
       -webkit-appearance: none; 
@@ -198,11 +173,18 @@ input[type=number]::-webkit-outer-spin-button {
 #bill{
     background-image: url(./images/icon-dollar.svg);
     margin-bottom:2rem;  
-
+}
+#bill::placeholder, #people::placeholder{
+    color: var(--dark);
+    opacity:0.35
 }
 
 #tip-input{
     padding-left:unset;
+}
+#tip-input::placeholder{
+
+    color:#547878;
 }
 
 #people{
@@ -310,8 +292,8 @@ input:focus::placeholder {
     font-size:1.25rem;
     line-height:1.851rem;
     color:var(--dark);
-
 }
+
 #reset:hover{
     background-color : var(--teal-light);
     transition: 0.1s;
@@ -322,11 +304,18 @@ input:focus::placeholder {
         padding:2.5rem;
     }
     .tip-amount{
-        margin-bottom:3.313rem;
+        align-items: center;
+        margin-bottom:1.563rem;
     }
     .total-amount{
-        margin-bottom:8.375rem;
+        align-items: center;
+        margin-bottom:7.625rem;
     }  
+    #tip-display, #total-display{
+        font-size: 48px;
+        line-height: 71px;
+        letter-spacing: -1px;
+    }
 }
 
 
