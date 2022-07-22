@@ -25,12 +25,10 @@ Desktop             |  Mobile
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
+- Semantic HTML markup
+- CSS
+- Javascript
 - Mobile-first workflow
-- DOM
 
 ### Author
 - [Iva](https://github.com/ivaberiashvili/)
